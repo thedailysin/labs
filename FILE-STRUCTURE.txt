@@ -1,0 +1,37 @@
+THE DAILY SIN PORTFOLIO — PLAIN HTML STRUCTURE
+
+index.html
+  Homepage. The rotating project title opens its project page.
+  Selecting either filter opens the matching category page.
+
+category-template.html
+  Reusable category page.
+  Example: category-template.html?type=industry&value=Education
+  Every project card opens project-template.html with its project information.
+
+project-template.html
+  Reusable project page.
+  Reads project information from its URL for now.
+  The Next Project block links to the next project.
+  Header links return home or open About me.
+
+about.html
+  About page. Replace the placeholder biography, email and social links.
+
+homepage-locked-2026-08-22.html
+  Safety archive of the approved homepage. Do not publish or edit.
+
+category-template-locked-2026-08-22.html
+  Safety archive of the approved category template. Do not publish or edit.
+
+education.html
+  Earlier standalone test copy. Not required for the linked site.
+
+START HERE
+  Open index.html. All active pages link to one another using relative links,
+  so the folder can be uploaded to GitHub or previewed locally as-is.
+
+LATER MEDIA ORGANISATION
+  assets/images/[project-slug]/
+  assets/videos/[project-slug]/
+  Keep large videos outside GitHub if storage becomes a problem.
