@@ -18,6 +18,12 @@ project-template.html
 about.html
   About page. Replace the placeholder biography, email and social links.
 
+assets/studio-seal.png
+  Shared Studio by The Daily Sin seal used in every page header.
+
+assets/logo-motion.js
+  Shared spring rotation used by the seal on mouse-wheel movement.
+
 homepage-locked-2026-08-22.html
   Safety archive of the approved homepage. Do not publish or edit.
 
