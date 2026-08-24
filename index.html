@@ -51,7 +51,7 @@
   </main><div class="cursor-x" id="cursor-x" aria-hidden="true"></div>
   <script src="assets/projects-data.js?v=3"></script>
   <script src="assets/sheet-config.js?v=3"></script>
-  <script src="assets/projects-sheet.js?v=3"></script>
+  <script src="assets/projects-sheet.js?v=6"></script>
   <script>
     window.PORTFOLIO_DATA_READY.then(()=>{
     const legacyProjects=[
@@ -85,7 +85,7 @@
 ['Becre8v','Industrial Design','Consumer Goods','Prototyping','#e8ff52','#181818','#8585ff'],
 ['Traya Tech','Industrial Design','Consumer Goods','Prototyping','#d7e3fc','#496a81','#f7a072']
     ].map(([client,category,industry,work,a,b,c,image,title,description,slug])=>({client,category,industry,work,palette:[a,b,c],image,title:title||`${client} — ${work}`,description:description||`${work} · ${industry}`,slug}));
-    const projects=window.PORTFOLIO_PROJECTS.flatMap((project,index)=>project.categories.flatMap(category=>project.industries.map(industry=>({...project,category,industry,work:project.title,palette:legacyProjects[index%legacyProjects.length].palette,image:project.cover||'',description:project.summary}))));
+    const projects=window.PORTFOLIO_PROJECTS.flatMap((project,index)=>project.categories.flatMap(category=>project.industries.map(industry=>({...project,category,industry,work:project.title,palette:legacyProjects[index%legacyProjects.length].palette,image:project.homepageCover||project.cover||'',description:project.summary}))));
     let current=0,open=null,spinning=false,hoveringStatement=false,hasStarted=false,panelTimer=null,panelCloseTimer=null;
     const $=id=>document.getElementById(id),home=$('home'),art=$('art'),artNext=$('art-next'),wrap=$('wrap'),statement=$('statement');
     const textCanvas=document.createElement('canvas'),textContext=textCanvas.getContext('2d');

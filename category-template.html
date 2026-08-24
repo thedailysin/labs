@@ -94,7 +94,7 @@ header{height:84px}.logo-placeholder{width:116px;height:40px;display:grid;place-
 </div>
 <script src="assets/projects-data.js?v=3"></script>
 <script src="assets/sheet-config.js?v=3"></script>
-<script src="assets/projects-sheet.js?v=3"></script>
+<script src="assets/projects-sheet.js?v=6"></script>
 <script>
 window.PORTFOLIO_DATA_READY.then(()=>{
 const legacyProjects=[['Prism','Editorial','Education','Brochure','#f3d35d','#e7523c','#183b62'],
@@ -126,7 +126,7 @@ const legacyProjects=[['Prism','Editorial','Education','Brochure','#f3d35d','#e7
 ['Bhailo','Industrial Design','Consumer Goods','Industrial Design','#e8d6bd','#35716b','#ef8354'],
 ['Becre8v','Industrial Design','Consumer Goods','Prototyping','#e8ff52','#181818','#8585ff'],
 ['Traya Tech','Industrial Design','Consumer Goods','Prototyping','#d7e3fc','#496a81','#f7a072']].map(([client,category,industry,work,a,b,c,image,title,description,slug])=>({client,category,industry,work,colors:[a,b,c],image,title:title||`${client} — ${work}`,description:description||`Selected ${work.toLowerCase()} work for ${industry}, developed as part of a flexible and distinctive design system.`,slug}));
-const projects=window.PORTFOLIO_PROJECTS.map((project,index)=>({...project,category:project.categories[0],industry:project.industries[0],work:project.title,colors:legacyProjects[index%legacyProjects.length].colors,image:project.cover||'',description:project.summary}));
+const projects=window.PORTFOLIO_PROJECTS.map((project,index)=>({...project,category:project.categories[0],industry:project.industries[0],work:project.title,colors:legacyProjects[index%legacyProjects.length].colors,image:project.display||project.cover||'',description:project.summary}));
 const descriptions={
 Editorial:['Turning dense information into things people actually want to read.'],
 Research:['Looking closely enough to find the problem beneath the obvious one.'],

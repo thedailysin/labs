@@ -46,6 +46,7 @@
   function recordsToProjects(records){
     return records.filter(record=>record.Projects).map((record,sheetOrder)=>{
       const media=Array.from({length:20},(_,index)=>mediaCell(record[`M${index+1}`])).filter(Boolean);
+      const displayMedia=mediaCell(record.D);
       return {
         priority:Number(record.Priority)||0,sheetOrder,
         slug:slugify(record.Projects),title:record.Projects,
@@ -53,7 +54,7 @@
         roles:list(record.Roles),summary:record.Desc||'',about:record['About the Project']||'',
         challenge:record['The Challenge']||'',solution:record['The Solution']||'',
         blurbs:longList(record.Blurbs),tools:list(record['Tools used']),credits:list(record.Collaborators),
-        media,cover:media[0]?.url||''
+        media,display:displayMedia?.url||'',homepageCover:media[0]?.url||'',cover:media[0]?.url||''
       };
     });
   }
