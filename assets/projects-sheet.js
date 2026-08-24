@@ -45,7 +45,7 @@
   }
   function recordsToProjects(records){
     return records.filter(record=>record.Projects).map((record,sheetOrder)=>{
-      const media=Array.from({length:11},(_,index)=>mediaCell(record[`M${index+1}`])).filter(Boolean);
+      const media=Array.from({length:20},(_,index)=>mediaCell(record[`M${index+1}`])).filter(Boolean);
       return {
         priority:Number(record.Priority)||0,sheetOrder,
         slug:slugify(record.Projects),title:record.Projects,
