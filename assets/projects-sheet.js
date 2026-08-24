@@ -39,9 +39,9 @@
   const slugify=value=>(value||'project').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
   function mediaCell(value){
     const raw=(value||'').trim();if(!raw)return null;
-    const match=raw.match(/^([fhov])\s*(?:\||,|:)\s*(.+)$/i);
+    const match=raw.match(/^([fhovt])\s*(?:\||,|:)\s*(.+)$/i);
     const code=match?match[1].toUpperCase():'F',mediaUrl=(match?match[2]:raw).trim();
-    return mediaUrl?{layout:{F:'full',H:'half',O:'original',V:'vertical'}[code]||'full',url:mediaUrl}:null;
+    return mediaUrl?{layout:{F:'full',H:'half',T:'third',O:'original',V:'vertical'}[code]||'full',url:mediaUrl}:null;
   }
   function recordsToProjects(records){
     return records.filter(record=>record.Projects).map((record,sheetOrder)=>{
