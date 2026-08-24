@@ -1,5 +1,23 @@
 (function(){
-  const fallback=Array.isArray(window.PORTFOLIO_PROJECTS)?window.PORTFOLIO_PROJECTS:[];
+  const disciplineLabels={
+    'Brand':'Brand Identities','Brand Identity':'Brand Identities',
+    'Visual Design':'Visual Systems',
+    'Motion Graphics/Film':'Motion & Film','Motion Graphics / Film':'Motion & Film',
+    'Digital':'Digital Experiences','Digital Experience':'Digital Experiences',
+    'Industrial/Product':'Products','Industrial / Product':'Products','Industrial Design':'Products',
+    'Campaign':'Campaigns'
+  };
+  const sectorLabels={
+    'NGO':'NGOs','Experience':'Lifestyle Brands','FMCG':'FMCG Brands',
+    'D2C':'D2C Brands','Manufacturing':'Manufacturers'
+  };
+  const label=(value,kind)=>(kind==='discipline'?disciplineLabels:sectorLabels)[value]||value;
+  const normalizeProject=project=>({...project,
+    categories:(project.categories||project.tags||[]).map(value=>label(value,'discipline')),
+    industries:(project.industries||[]).map(value=>label(value,'sector'))
+  });
+  window.PORTFOLIO_LABEL=(value,kind)=>label(value,kind);
+  const fallback=(Array.isArray(window.PORTFOLIO_PROJECTS)?window.PORTFOLIO_PROJECTS:[]).map(normalizeProject);
   const configuredUrl=(window.PORTFOLIO_SHEET_URL||window.PORTFOLIO_SHEET_CSV_URL||'').trim();
   const isGoogleSheet=/docs\.google\.com\/spreadsheets/i.test(configuredUrl);
 
@@ -31,7 +49,7 @@
       return {
         priority:Number(record.Priority)||0,sheetOrder,
         slug:slugify(record.Projects),title:record.Projects,
-        categories:list(record.Discipline),industries:list(record.Sector),client:record.Client||'Independent',
+        categories:list(record.Discipline).map(value=>label(value,'discipline')),industries:list(record.Sector).map(value=>label(value,'sector')),client:record.Client||'Independent',
         roles:list(record.Roles),summary:record.Desc||'',about:record['About the Project']||'',
         challenge:record['The Challenge']||'',solution:record['The Solution']||'',
         blurbs:longList(record.Blurbs),tools:list(record['Tools used']),credits:list(record.Collaborators),

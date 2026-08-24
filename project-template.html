@@ -69,6 +69,13 @@
     @media(min-width:701px){.about-trigger,.about-open .about-trigger,.about-closing .about-trigger{display:inline-flex!important;position:fixed!important;z-index:1001!important;top:var(--about-button-top,96px)!important;right:32px!important;bottom:auto!important;width:184px!important;min-width:184px!important;height:44px!important;flex:0 0 184px!important;margin:0!important;padding:0 14px!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;white-space:nowrap!important;overflow:hidden!important}.about-trigger:after{flex:0 0 16px!important;width:16px!important;margin:0!important}}
     /* Keep the case-study copy in view while its paired media column scrolls. */
     @media(min-width:701px){.about-open .about-panel{position:sticky!important;top:var(--about-panel-stick-top,96px)!important;align-self:start!important;height:auto!important;min-height:0!important;max-height:none!important;padding:0 0 48px!important;overflow:visible!important}}
+    /* Mobile: keep the project-information control centred and fully on-screen. */
+    @media(max-width:700px){
+      .project-blurb,.about-open .project-blurb{width:100%!important;margin-left:0!important;padding-left:20%!important;font-size:28px!important;line-height:34px!important}
+      .about-trigger,.about-open .about-trigger,.about-closing .about-trigger{display:inline-flex!important;position:fixed!important;z-index:1001!important;left:50%!important;right:auto!important;top:auto!important;bottom:24px!important;transform:translateX(-50%)!important;width:184px!important;min-width:184px!important;height:44px!important;margin:0!important;padding:0 14px!important;align-items:center!important;justify-content:space-between!important;white-space:nowrap!important;overflow:hidden!important;color:#1a1a1a!important;background:#ededeb!important;border:0!important;border-radius:4px!important;outline:0!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+      .about-trigger:after{flex:0 0 16px!important;width:16px!important;margin:0!important}
+      .about-trigger:hover,.about-trigger:active{background:#e3e3e0!important;box-shadow:none!important}
+    }
   </style>
   <link rel="stylesheet" href="assets/site-header.css">
 </head>
