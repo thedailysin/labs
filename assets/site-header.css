@@ -1,0 +1,70 @@
+.shared-site-header{
+  position:sticky!important;
+  top:0!important;
+  z-index:1000!important;
+  width:calc(100% + 64px)!important;
+  height:84px!important;
+  margin:0 0 0 -32px!important;
+  padding:0 32px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  color:#1a1a1a!important;
+  background:#FFFFFF!important;
+  border:0!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+.shared-site-header .shared-logo{
+  display:block!important;
+  width:58px!important;
+  height:58px!important;
+  flex:0 0 58px!important;
+  overflow:hidden!important;
+  border:0!important;
+  border-radius:50%!important;
+  background:transparent!important;
+}
+.shared-site-header .shared-logo img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  transform-origin:50% 50%!important;
+  will-change:transform!important;
+}
+.shared-site-header .shared-header-action{
+  display:grid!important;
+  place-items:center!important;
+  min-width:40px!important;
+  height:40px!important;
+  margin:0!important;
+  padding:0!important;
+  color:#767676!important;
+  text-decoration:none!important;
+  font:400 16px/20px Outfit,Arial,sans-serif!important;
+  transition:color 180ms ease,opacity 180ms ease!important;
+}
+.shared-site-header .shared-header-action:hover{color:#1a1a1a!important;opacity:1!important}
+.shared-site-header .shared-close{color:#1a1a1a!important;font-size:30px!important;line-height:1!important}
+.home .shared-site-header{
+  width:100%!important;
+  margin:0!important;
+  color:#fff!important;
+  background:linear-gradient(to bottom,rgba(0,0,0,.2),transparent)!important;
+  border-bottom:0!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+.home .shared-site-header .shared-header-action{color:#fff!important}
+@media(max-width:700px){
+  .shared-site-header{
+    width:calc(100% + 44px)!important;
+    height:72px!important;
+    margin-left:-22px!important;
+    padding:0 22px!important;
+  }
+  .shared-site-header .shared-logo{width:50px!important;height:50px!important;flex-basis:50px!important}
+}

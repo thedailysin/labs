@@ -12,10 +12,12 @@
 @media(max-width:700px){.shell{padding:0 22px}header{height:72px}.brand{font-size:18px}.nav{display:none}.menu{display:block}.intro{display:block;padding:20px 0 78px}.intro h1{font-size:31px;line-height:33px;margin-bottom:34px;letter-spacing:-.62px}.intro-copy{width:auto;font-size:16px;line-height:20px}.eyebrow{display:none}.grid{display:block}.card{margin-bottom:64px}.visual,.wide .visual{aspect-ratio:3/2}.caption{padding-top:12px}.caption h2,.caption p{font-size:16px;line-height:20px}.projects{padding-bottom:30px}.feature{height:100svh;min-height:680px;margin:0 -22px;padding:24px 22px 0}.feature h2{font-size:31px;line-height:33px;letter-spacing:-.62px}.feature-copy{width:100%;margin-top:22px;font-size:16px;line-height:20px}.marquee{margin:auto -22px 0}.marquee-track{gap:10px;padding-bottom:28px}.poster-wrap{flex-basis:58vw}.year{margin-bottom:8px;font-size:14px}.poster{font-size:28px}}
 header{height:84px}.logo-placeholder{width:116px;height:40px;display:grid;place-items:center;border:1px solid #1a1a1a;background:#fff;color:#1a1a1a;font-size:10px;line-height:1;letter-spacing:.16em}.about-link{font-size:14px;line-height:18px}@media(max-width:700px){header{height:72px}.logo-placeholder{width:98px;height:34px}.about-link{display:block}}
     @view-transition{navigation:auto}::view-transition-old(root){animation:page-leave 180ms cubic-bezier(.4,0,1,1) both}::view-transition-new(root){animation:page-enter 320ms cubic-bezier(.16,1,.3,1) both}@keyframes page-leave{to{opacity:0;transform:translateY(-3px)}}@keyframes page-enter{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none!important}}
-.logo-placeholder.has-logo{display:block;width:58px;height:58px;border:0;border-radius:50%;overflow:hidden;background:transparent}.logo-placeholder.has-logo img{display:block;width:100%;height:100%;object-fit:cover;transform-origin:50% 50%;will-change:transform}@media(max-width:700px){.logo-placeholder.has-logo{width:50px;height:50px}}
+.logo-placeholder.has-logo{display:block;width:58px;height:58px;border:0;border-radius:50%;overflow:hidden;background:transparent}.logo-placeholder.has-logo img{display:block;width:100%;height:100%;object-fit:cover;transform-origin:50% 50%;will-change:transform}.visual.has-image{background-position:center;background-size:cover;background-repeat:no-repeat}.visual.has-image:before{display:none}@media(max-width:700px){.logo-placeholder.has-logo{width:50px;height:50px}}
 .feature{height:auto;min-height:0}.feature .marquee{margin:clamp(52px,8vh,86px) -32px 0}
 @media(max-width:700px){.feature{height:auto;min-height:0}.feature .marquee{margin:clamp(36px,6svh,56px) -22px 0}}
+.card:nth-child(n+6){grid-column:span 4}.grid.single-project .card{grid-column:span 8}.intro{grid-template-columns:1fr}.intro-copy{display:none}
 </style>
+<link rel="stylesheet" href="assets/site-header.css">
 </head>
 <body>
 <div class="shell">
@@ -87,15 +89,78 @@ header{height:84px}.logo-placeholder{width:116px;height:40px;display:grid;place-
 </section>
 </main>
 </div>
+<script src="assets/projects-data.js"></script>
+<script src="assets/sheet-config.js"></script>
+<script src="assets/projects-sheet.js"></script>
 <script>
-const projects=[['Prism','Books','Education','Brochure','#f3d35d','#e7523c','#183b62'],['Prism','Books','Education','Process Docs','#d9e9e1','#24544a','#f26e4c'],['TMM','Books','NGO','Comic','#f55234','#f7c94b','#21211f'],['Dhokra','Books','NGO','Coffee Table Book','#b9773c','#261b15','#e9d6b8'],['The Daily Sin','Brand Identity','FMCG','Brand Identity','#e43f36','#f5e8ce','#302019'],['Voyage','Brand Identity','Eyewear','Brand Identity','#f1cf58','#073b4c','#ef476f'],['The Daily Sin','Social Media','FMCG','LinkedIn','#ff5c35','#ffebd2','#712f23'],['Prism','Social Media','Education','Social Media','#6b54d9','#ebe3ff','#f3a74f'],['Prism','Visual Design','Education','Visual Design','#3564cc','#f4d35e','#fafafa'],['Ofmuziq','Visual Design','Entertainment','Visual Design','#181525','#a96ff2','#f95a7c'],['Voyage','Visual Design','Eyewear','Visual Design','#7a5cfa','#e7dcff','#16132b'],['TMM','Visual Design','NGO','Banners','#e95d43','#f6d55c','#3f51b5'],['Behome','Visual Design','Home Furnishing','Visual Design','#d7c2a4','#5d6a55','#f5efe4'],['Planthia','Visual Design','Skincare','Visual Design','#b6ddbb','#f5d6dc','#344f3b'],['Prism','Motion Graphics / Film','Education','Motion Graphics / Film','#89c2d9','#012a4a','#ffba08'],['TMM','Motion Graphics / Film','NGO','Motion Graphics / Film','#f46036','#2e294e','#1b998b'],['Voyage','Motion Graphics / Film','Eyewear','Motion Graphics / Film','#ef476f','#ffd166','#073b4c'],['Personal','Motion Graphics / Film','Myself','Motion Graphics / Film','#70d6ff','#ff70a6','#ff9770'],['CBS','Motion Graphics / Film','Manufacturing','Motion Graphics / Film','#355c7d','#f67280','#f8b195'],['TDS','Packaging','FMCG','Packaging','#162b21','#deba69','#f5f0df'],['Personal','Packaging','Myself','Packaging','#ffe66d','#4ecdc4','#1a535c'],['Prism','Digital Experience','Education','Website','#84c5e6','#fcf6e8','#33415c'],['Ofmuziq','Digital Experience','Entertainment','App','#211a3a','#9b5de5','#00f5d4'],['The Daily Sin','Digital Experience','FMCG','Website','#ed6a5a','#f4f1bb','#5ca4a9'],['Diggin','Digital Experience','Restaurant','Website','#cb3a2f','#f6e7cb','#263b2d'],['Bhailo','Industrial Design','Consumer Goods','Industrial Design','#e8d6bd','#35716b','#ef8354'],['Becre8v','Industrial Design','Consumer Goods','Prototyping','#e8ff52','#181818','#8585ff'],['Traya Tech','Industrial Design','Consumer Goods','Prototyping','#d7e3fc','#496a81','#f7a072']].map(([client,category,industry,work,a,b,c])=>({client,category,industry,work,colors:[a,b,c]}));
-const descriptions={Education:['Design for education must make complexity approachable without making it simplistic. It creates structures that help people find information, understand relationships and feel confident moving forward.','Across publications, digital products, social systems and motion, these projects use clarity as a starting point—not a visual limitation.'],Books:['Books turn sequences of words, images and ideas into physical experiences. The work here spans practical documents, editorial narratives and image-led publications.','Each project treats pacing, hierarchy and material choices as part of how the story is understood.']};const q=new URLSearchParams(location.search),value=q.get('value')||'Education',type=q.get('type')||'industry',matched=projects.filter(p=>p[type]===value),items=matched.length?matched:projects.slice(0,7),copy=descriptions[value]||[`This selection brings together work connected by ${value}. Different formats and clients reveal how one design approach adapts to distinct contexts.`,`The projects balance individual stories with the broader character of the practice.`];document.title=`${value} — Design Portfolio`;document.getElementById('title').textContent=value;document.getElementById('description').textContent=copy[0];document.getElementById('description-two').textContent=copy[1];document.getElementById('eyebrow').textContent=`Showing work for ${value}`;function projectUrl(p){const slug=`${p.client}-${p.work}`.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');const params=new URLSearchParams({slug,title:`${p.client} — ${p.work}`,client:p.client,category:p.category,industry:p.industry,work:p.work,palette:p.colors.join(',')});return `project-template.html?${params}`}function card(p,i){const el=document.createElement('a');el.href=projectUrl(p);el.className=`card ${i===1?'wide':''}`;el.innerHTML=`<div class="visual" data-mark="${p.client}" style="--a:${p.colors[0]};--b:${p.colors[1]};--c:${p.colors[2]};--r:${12+i*7}deg">
+window.PORTFOLIO_DATA_READY.then(()=>{
+const legacyProjects=[['Prism','Editorial','Education','Brochure','#f3d35d','#e7523c','#183b62'],
+['Prism','Editorial','Education','Process Docs','#d9e9e1','#24544a','#f26e4c'],
+['TMM','Editorial','NGO','Comic','#f55234','#f7c94b','#21211f'],
+['Independent','Editorial','Arts & Culture','Dhokra: Through the Streets of Betul','#b9773c','#261b15','#e9d6b8','https://pub-0941a4f2ea604ffbb386f55599363620.r2.dev/Dhokra/1.webp','Dhokra: Through the Streets of Betul','Documenting Dhokra through field research and publication design.','dhokra-coffee-table-book'],
+['Independent','Research','Arts & Culture','Dhokra: Through the Streets of Betul','#b9773c','#261b15','#e9d6b8','https://pub-0941a4f2ea604ffbb386f55599363620.r2.dev/Dhokra/1.webp','Dhokra: Through the Streets of Betul','Documenting Dhokra through field research and publication design.','dhokra-coffee-table-book'],
+['The Daily Sin','Brand Identity','FMCG','Brand Identity','#e43f36','#f5e8ce','#302019'],
+['Voyage','Brand Identity','Eyewear','Brand Identity','#f1cf58','#073b4c','#ef476f'],
+['The Daily Sin','Social Media','FMCG','LinkedIn','#ff5c35','#ffebd2','#712f23'],
+['Prism','Social Media','Education','Social Media','#6b54d9','#ebe3ff','#f3a74f'],
+['Prism','Visual Design','Education','Visual Design','#3564cc','#f4d35e','#fafafa'],
+['Ofmuziq','Visual Design','Entertainment','Visual Design','#181525','#a96ff2','#f95a7c'],
+['Voyage','Visual Design','Eyewear','Visual Design','#7a5cfa','#e7dcff','#16132b'],
+['TMM','Visual Design','NGO','Banners','#e95d43','#f6d55c','#3f51b5'],
+['Behome','Visual Design','Home Furnishing','Visual Design','#d7c2a4','#5d6a55','#f5efe4'],
+['Planthia','Visual Design','Skincare','Visual Design','#b6ddbb','#f5d6dc','#344f3b'],
+['Prism','Motion Graphics / Film','Education','Motion Graphics / Film','#89c2d9','#012a4a','#ffba08'],
+['TMM','Motion Graphics / Film','NGO','Motion Graphics / Film','#f46036','#2e294e','#1b998b'],
+['Voyage','Motion Graphics / Film','Eyewear','Motion Graphics / Film','#ef476f','#ffd166','#073b4c'],
+['Personal','Motion Graphics / Film','Myself','Motion Graphics / Film','#70d6ff','#ff70a6','#ff9770'],
+['CBS','Motion Graphics / Film','Manufacturing','Motion Graphics / Film','#355c7d','#f67280','#f8b195'],
+['TDS','Packaging','FMCG','Packaging','#162b21','#deba69','#f5f0df'],
+['Personal','Packaging','Myself','Packaging','#ffe66d','#4ecdc4','#1a535c'],
+['Prism','Digital Experience','Education','Website','#84c5e6','#fcf6e8','#33415c'],
+['Ofmuziq','Digital Experience','Entertainment','App','#211a3a','#9b5de5','#00f5d4'],
+['The Daily Sin','Digital Experience','FMCG','Website','#ed6a5a','#f4f1bb','#5ca4a9'],
+['Diggin','Digital Experience','Restaurant','Website','#cb3a2f','#f6e7cb','#263b2d'],
+['Bhailo','Industrial Design','Consumer Goods','Industrial Design','#e8d6bd','#35716b','#ef8354'],
+['Becre8v','Industrial Design','Consumer Goods','Prototyping','#e8ff52','#181818','#8585ff'],
+['Traya Tech','Industrial Design','Consumer Goods','Prototyping','#d7e3fc','#496a81','#f7a072']].map(([client,category,industry,work,a,b,c,image,title,description,slug])=>({client,category,industry,work,colors:[a,b,c],image,title:title||`${client} — ${work}`,description:description||`Selected ${work.toLowerCase()} work for ${industry}, developed as part of a flexible and distinctive design system.`,slug}));
+const projects=window.PORTFOLIO_PROJECTS.map((project,index)=>({...project,category:project.categories[0],industry:project.industries[0],work:project.title,colors:legacyProjects[index%legacyProjects.length].colors,image:project.cover||'',description:project.summary}));
+const descriptions={
+Editorial:['Turning dense information into things people actually want to read.'],
+Research:['Looking closely enough to find the problem beneath the obvious one.'],
+'Brand Identity':['Building visual systems that make ideas instantly recognisable.'],
+'Visual Design':['Giving information, products and ideas a stronger visual voice.'],
+'Motion Graphics/Film':['Using movement to explain, reveal and make things feel alive.'],
+'Motion Graphics / Film':['Using movement to explain, reveal and make things feel alive.'],
+Packaging:['Designing the moment before the product is even used.'],
+Digital:['Turning brands, services and systems into usable digital experiences.'],
+'Industrial/Product':['Making ideas physical, functional and worth interacting with.'],
+'Industrial / Product':['Making ideas physical, functional and worth interacting with.'],
+Campaign:['Creating ideas sharp enough to earn attention and conversation.'],
+Education:['Making learning clearer, more engaging and easier to navigate.'],
+NGO:['Making complex social and organisational communication easier to understand.'],
+'Arts & Culture':['Documenting and translating culture without flattening what makes it distinct.'],
+Experience:['Designing moments people remember, not just things they see.'],
+FMCG:['Making everyday products harder to ignore.'],
+D2C:['Helping products sell through stronger stories, visuals and experiences.'],
+Manufacturing:['Making technical products and processes easier to see and understand.']
+};
+const q=new URLSearchParams(location.search),value=q.get('value')||'Education',type=q.get('type')||'industry',matched=projects.filter(p=>type==='category'?p.categories.includes(value):p.industries.includes(value)),items=(matched.length?matched:projects.slice(0,7)).sort((a,b)=>((b.priority||0)-(a.priority||0))||((a.sheetOrder??projects.indexOf(a))-(b.sheetOrder??projects.indexOf(b)))),copy=descriptions[value]||[`This selection brings together work connected by ${value}. Different formats and clients reveal how one design approach adapts to distinct contexts.`,`The projects balance individual stories with the broader character of the practice.`];
+document.title=`${value} — Design Portfolio`;
+document.getElementById('title').textContent=value;
+document.getElementById('description').textContent=copy[0];
+document.getElementById('description-two').textContent=copy[1]||'';document.getElementById('description-two').hidden=!copy[1];
+document.getElementById('eyebrow').textContent=`Showing work for ${value}`;
+function projectUrl(p){const slug=p.slug||`${p.client}-${p.work}`.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');const params=new URLSearchParams({slug,title:p.title,client:p.client,category:p.category,industry:p.industry,work:p.work,palette:p.colors.join(',')});return `project-template.html?${params}`}
+function card(p,i){const el=document.createElement('a');el.href=projectUrl(p);el.className=`card ${i===1?'wide':''}`;el.innerHTML=`<div class="visual${p.image?' has-image':''}" data-mark="${p.client}" style="--a:${p.colors[0]};--b:${p.colors[1]};--c:${p.colors[2]};--r:${12+i*7}deg;${p.image?`background-image:url('${p.image}')`:''}">
 </div>
 <div class="caption">
-<h2>${p.client} — ${p.work}</h2>
-<p>Selected ${p.work.toLowerCase()} work for ${p.industry}, developed as part of a flexible and distinctive design system.</p>
-</div>`;return el}items.slice(0,5).forEach((p,i)=>document.getElementById('first-grid').appendChild(card(p,i)));
+<h2>${p.title}</h2>
+<p>${p.description}</p>
+</div>`;return el}
+    const projectGrid=document.getElementById('first-grid');projectGrid.classList.toggle('single-project',items.length===1);items.forEach((p,i)=>projectGrid.appendChild(card(p,i)));
+});
 </script>
 </body>
+<script src="assets/site-header.js"></script>
 <script src="assets/logo-motion.js"></script>
 </html>
