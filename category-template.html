@@ -18,6 +18,7 @@ header{height:84px}.logo-placeholder{width:116px;height:40px;display:grid;place-
 @media(max-width:700px){.feature{height:auto;min-height:0}.feature .marquee{margin:clamp(36px,6svh,56px) -22px 0}}
 .card:nth-child(n+6){grid-column:span 4}.grid.single-project .card{grid-column:span 8}.intro{grid-template-columns:1fr}.intro-copy{display:none}
 @media(max-width:700px){.intro{padding:20px 0 42px}.card,.grid.single-project .card{display:block;margin-bottom:64px}.card:last-child{margin-bottom:0}.caption{padding-bottom:0}}
+.visual video{display:block;width:100%;height:100%;object-fit:cover}.card-video-controls{position:absolute;z-index:3;right:12px;bottom:12px;display:flex;gap:7px;opacity:0;pointer-events:none;transform:translateY(5px);transition:opacity 180ms ease,transform 240ms cubic-bezier(.16,1,.3,1)}.visual.controls-visible .card-video-controls{opacity:1;pointer-events:auto;transform:none}.card-video-controls button{height:35px;padding:0 12px;border:1px solid rgba(255,255,255,.72);border-radius:999px;background:rgba(245,248,246,.7);color:#182019;font:400 13px/18px Outfit,sans-serif;box-shadow:inset 0 1px 0 #fff,0 7px 20px rgba(0,0,0,.16);backdrop-filter:blur(15px) saturate(155%);-webkit-backdrop-filter:blur(15px) saturate(155%)}.card-video-controls .card-toggle{width:39px;padding:0}
 </style>
 <link rel="stylesheet" href="assets/site-header.css?v=5">
 <link rel="stylesheet" href="assets/glass-system.css?v=5">
@@ -152,12 +153,12 @@ document.getElementById('description').textContent=copy[0];
 document.getElementById('description-two').textContent=copy[1]||'';document.getElementById('description-two').hidden=!copy[1];
 document.getElementById('eyebrow').textContent=`Showing work for ${value}`;
 function projectUrl(p){const slug=p.slug||`${p.client}-${p.work}`.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');const params=new URLSearchParams({slug,title:p.title,client:p.client,category:p.category,industry:p.industry,work:p.work,palette:p.colors.join(',')});return `project-template.html?${params}`}
-function card(p,i){const el=document.createElement('a');el.href=projectUrl(p);el.className=`card ${i===1?'wide':''}`;el.innerHTML=`<div class="visual${p.image?' has-image':''}" data-mark="${p.client}" style="--a:${p.colors[0]};--b:${p.colors[1]};--c:${p.colors[2]};--r:${12+i*7}deg;${p.image?`background-image:url('${p.image}')`:''}">
+function isDirectVideo(url){return /\.(?:mp4|webm|mov|m4v)(?:[?#]|$)/i.test(url||'')}function card(p,i){const video=isDirectVideo(p.image),el=document.createElement('a');el.href=projectUrl(p);el.className=`card ${i===1?'wide':''}`;el.innerHTML=`<div class="visual${p.image&&!video?' has-image':''}" data-mark="${p.client}" style="--a:${p.colors[0]};--b:${p.colors[1]};--c:${p.colors[2]};--r:${12+i*7}deg;${p.image&&!video?`background-image:url('${p.image}')`:''}">${video?`<video src="${p.image}" muted loop playsinline preload="metadata"></video><div class="card-video-controls"><button class="card-toggle" type="button" aria-label="Pause video">Ⅱ</button><button class="card-sound" type="button">Sound on</button></div>`:''}
 </div>
 <div class="caption">
 <h2>${p.title}</h2>
 <p>${p.description}</p>
-</div>`;return el}
+</div>`;if(video){const visual=el.querySelector('.visual'),media=el.querySelector('video'),toggle=el.querySelector('.card-toggle'),sound=el.querySelector('.card-sound'),sync=()=>{toggle.textContent=media.paused?'▶':'Ⅱ';toggle.setAttribute('aria-label',media.paused?'Play video':'Pause video')};media.play().catch(()=>{});visual.onclick=e=>{if(!visual.classList.contains('controls-visible')){e.preventDefault();visual.classList.add('controls-visible');sync()}};toggle.onclick=e=>{e.preventDefault();e.stopPropagation();media.paused?media.play().catch(()=>{}):media.pause();sync()};sound.onclick=e=>{e.preventDefault();e.stopPropagation();media.muted=!media.muted;sound.textContent=media.muted?'Sound on':'Sound off'};media.addEventListener('play',sync);media.addEventListener('pause',sync)}return el}
     const projectGrid=document.getElementById('first-grid');projectGrid.classList.toggle('single-project',items.length===1);items.forEach((p,i)=>projectGrid.appendChild(card(p,i)));
 });
 </script>
