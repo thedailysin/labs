@@ -17,7 +17,7 @@
     industries:(project.industries||[]).map(value=>label(value,'sector'))
   });
   window.PORTFOLIO_LABEL=(value,kind)=>label(value,kind);
-  const fallback=(Array.isArray(window.PORTFOLIO_PROJECTS)?window.PORTFOLIO_PROJECTS:[]).map(normalizeProject);
+  const fallback=(Array.isArray(window.PORTFOLIO_PROJECTS)?window.PORTFOLIO_PROJECTS:[]).map(normalizeProject).filter(project=>project.media?.[0]);
   const configuredUrl=(window.PORTFOLIO_SHEET_URL||window.PORTFOLIO_SHEET_CSV_URL||'').trim();
   const isGoogleSheet=/docs\.google\.com\/spreadsheets/i.test(configuredUrl);
 
@@ -44,7 +44,7 @@
     return mediaUrl?{layout:{F:'full',H:'half',T:'third',O:'original',V:'vertical'}[code]||'full',url:mediaUrl}:null;
   }
   function recordsToProjects(records){
-    return records.filter(record=>record.Projects).map((record,sheetOrder)=>{
+    return records.filter(record=>record.Projects&&mediaCell(record.M1)).map((record,sheetOrder)=>{
       const media=Array.from({length:20},(_,index)=>mediaCell(record[`M${index+1}`])).filter(Boolean);
       const displayMedia=mediaCell(record.D);
       return {

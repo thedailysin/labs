@@ -18,7 +18,10 @@ Keep these headings exactly:
 - Use commas, semicolons, or new lines for multiple Disciplines, Sectors, Roles, Tools, and Collaborators.
 - Put each blurb on a new line. `||` can also separate blurbs.
 - Priority must be a number. Higher numbers appear first within matching category pages.
-- The first valid media item becomes the homepage and category-page cover.
+- **M1 is the publication switch.** A row with an empty M1 is hidden from the homepage, category pages, project pages, and project navigation.
+- As soon as M1 contains a valid media URL, the project qualifies for the website automatically on the next page load.
+- M1 is always the homepage cover. The optional `D` column remains the category-page display image; when `D` is blank, M1 is used there too.
+- No generated placeholder artwork is shown for unpublished or missing media.
 
 ## Media notation
 
