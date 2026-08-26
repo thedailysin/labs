@@ -16,22 +16,13 @@ project-template.html
   Header links return home or open About me.
 
 about.html
-  About page. Replace the placeholder biography, email and social links.
+  About page. Biography, email and contact links live here.
 
 assets/studio-seal.png
   Shared Studio by The Daily Sin seal used in every page header.
 
 assets/logo-motion.js
   Shared spring rotation used by the seal on mouse-wheel movement.
-
-homepage-locked-2026-08-22.html
-  Safety archive of the approved homepage. Do not publish or edit.
-
-category-template-locked-2026-08-22.html
-  Safety archive of the approved category template. Do not publish or edit.
-
-education.html
-  Earlier standalone test copy. Not required for the linked site.
 
 START HERE
   Open index.html. All active pages link to one another using relative links,

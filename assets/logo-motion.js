@@ -1,5 +1,5 @@
 (() => {
-  const logo = document.querySelector('.shared-logo img, .logo-placeholder img');
+  const logo = document.querySelector('.shared-logo img, .site-logo img');
   if (!logo || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   let angle = 0;

@@ -1,10 +1,11 @@
 (function(){
   const disciplineLabels={
-    'Brand':'Brand Identities','Brand Identity':'Brand Identities',
+    'Editorial':'Print','Print':'Print',
+    'Brand':'Brand Identity','Brand Identity':'Brand Identity','Brand Identities':'Brand Identity',
     'Visual Design':'Visual Systems',
     'Motion Graphics/Film':'Motion & Film','Motion Graphics / Film':'Motion & Film',
     'Digital':'Digital Experiences','Digital Experience':'Digital Experiences',
-    'Industrial/Product':'Products','Industrial / Product':'Products','Industrial Design':'Products',
+    'Product':'Industrial/Product','Products':'Industrial/Product','Industrial/Product':'Industrial/Product','Industrial / Product':'Industrial/Product','Industrial Design':'Industrial/Product',
     'Campaign':'Campaigns'
   };
   const sectorLabels={
