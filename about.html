@@ -1,19 +1,21 @@
 <!doctype html>
+
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Pankaj Baid — About</title>
-<meta name="description" content="Pankaj Baid is an interdisciplinary designer and founder working across brand, packaging, 3D, motion and product. Founder of The Daily Sin.">
-<meta property="og:title" content="Pankaj Baid — Interdisciplinary Designer & Founder">
-<meta property="og:description" content="Selected experience across industrial design, brand, 3D, motion and founder-led product building.">
-<link rel="icon" type="image/png" href="assets/favicon.png?v=2">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500&display=swap" rel="stylesheet">
+<meta content="Pankaj Baid is an interdisciplinary designer and founder working across brand, packaging, 3D, motion and product. Founder of The Daily Sin." name="description"/>
+<meta content="Pankaj Baid — Interdisciplinary Designer &amp; Founder" property="og:title"/>
+<meta content="Selected experience across industrial design, brand, 3D, motion and founder-led product building." property="og:description"/>
+<link href="assets/favicon.png?v=2" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <!-- These two existing site stylesheets are intentionally retained so the page stays inside the portfolio system when deployed. -->
-<link rel="stylesheet" href="assets/site-header.css?v=5">
-<link rel="stylesheet" href="assets/glass-system.css?v=5">
+<link href="assets/site-header.css?v=5" rel="stylesheet"/>
+<link href="assets/glass-system.css?v=5" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -45,6 +47,9 @@ button{font:inherit}
 .intro{max-width:760px;padding-bottom:58px;border-bottom:1px solid var(--hairline)}
 .intro h1{margin:0 0 20px;font-size:32px;line-height:1.08;font-weight:400;letter-spacing:-.025em}
 .bio{max-width:720px;margin:0;font-size:16px;line-height:1.45;color:#2d2d2a}
+
+.hero-photo{margin:0 0 22px;width:100%;aspect-ratio:3/2;border-radius:16px;overflow:hidden;background:#f4f4f1}
+.hero-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center center}
 .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
 .action{height:40px;display:inline-flex;align-items:center;gap:9px;padding:0 12px;border:1px solid var(--hairline);border-radius:4px;background:#fff;color:var(--ink);font:400 14px/18px Outfit,sans-serif;cursor:pointer;transition:background .2s ease,border-color .2s ease}
 .action:hover{background:#f5f5f2}
@@ -110,6 +115,26 @@ button{font:inherit}
   .entry:hover .copy,.entry:focus-visible .copy{transform:translateY(0);color:#20201d}
 }
 
+
+.project-attachments{grid-column:3;margin-top:2px;padding-top:2px}
+.project-attachments-label{margin:0 0 10px;font-size:11px;line-height:15px;letter-spacing:.035em;text-transform:uppercase;color:#8a8a84}
+.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.project-card{min-width:0;border:1px solid rgba(55,55,50,.10);border-radius:13px;overflow:hidden;background:rgba(255,255,255,.72);box-shadow:0 1px 0 rgba(255,255,255,.8) inset;transition:transform .28s cubic-bezier(.2,.8,.2,1),border-color .28s ease,background .28s ease}
+.project-thumb{position:relative;aspect-ratio:16/10;display:grid;place-items:center;overflow:hidden;background:#f4f4f1;border-bottom:1px solid rgba(55,55,50,.08)}
+.project-thumb img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .30s cubic-bezier(.2,.8,.2,1)}
+.project-thumb.logo-thumb img{object-fit:contain;padding:15%}
+.project-thumb.dark{background:#090909}
+.project-thumb.dark img{padding:11%}
+.project-thumb.placeholder{background:linear-gradient(145deg,rgba(251,251,249,.94),rgba(228,231,231,.78))}
+.project-thumb.placeholder:before{content:"APE";display:grid;place-items:center;width:46px;height:46px;border-radius:13px;border:1px solid rgba(70,78,82,.12);background:rgba(255,255,255,.58);font-size:11px;letter-spacing:.08em;color:#6f7476;box-shadow:inset 0 1px 0 rgba(255,255,255,.92)}
+.project-card-copy{padding:10px 11px 11px}
+.project-name{display:block;font-size:12.5px;line-height:16px;color:#252522}
+.project-kind{display:block;margin-top:3px;font-size:10.5px;line-height:14px;color:#8b8b85}
+@media (hover:hover) and (pointer:fine){
+  .project-card:hover{transform:translateY(-1px);border-color:rgba(55,55,50,.18);background:rgba(255,255,255,.9)}
+  .project-card:hover .project-thumb img{transform:scale(1.02)}
+}
+
 .project-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
 .project-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;line-height:16px;color:#6d6d68;text-decoration:none;border-bottom:1px solid rgba(60,60,55,.2);padding-bottom:1px;transition:color .2s ease,border-color .2s ease}
 .project-link:hover{color:#1f1f1c;border-color:#1f1f1c}
@@ -117,8 +142,8 @@ button{font:inherit}
 
 .contact-dialog{width:min(620px,calc(100vw - 32px));padding:0;border:0;background:transparent;overflow:visible}
 .contact-dialog::backdrop{background:rgba(13,24,16,.38);backdrop-filter:blur(10px)}
-.contact-card{position:relative;padding:34px;background:rgba(250,252,249,.93);border:1px solid rgba(55,193,85,.35);box-shadow:0 28px 90px rgba(0,0,0,.20);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transform:translateY(18px) scale(.97);opacity:0;animation:contact-in 520ms cubic-bezier(.16,1,.3,1) forwards}
-.contact-card:before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:#37c155}
+.contact-card{position:relative;padding:34px;background:rgba(250,250,248,.94);border:1px solid rgba(55,55,50,.15);box-shadow:0 28px 90px rgba(0,0,0,.20);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transform:translateY(18px) scale(.97);opacity:0;animation:contact-in 520ms cubic-bezier(.16,1,.3,1) forwards}
+.contact-card:before{content:"";position:absolute;inset:0 auto 0 0;width:1px;background:rgba(45,45,40,.18)}
 .contact-close{position:absolute;top:22px;right:22px;width:36px;height:36px;border:0;background:transparent;font:400 28px/1 Outfit,sans-serif;cursor:pointer}
 .contact-kicker{margin:0 0 58px;color:#657067;font-size:13px}
 .contact-card h2{max-width:470px;margin:0 0 46px;font-size:31px;line-height:33px;font-weight:400;letter-spacing:-.62px}
@@ -131,20 +156,31 @@ button{font:inherit}
   .about-grid,.timeline-head{grid-template-columns:1fr;gap:16px}
   .entry-surface{grid-template-columns:60px 120px minmax(0,1fr);gap:18px;padding:21px 23px}
   .entry-main{grid-template-columns:1fr;gap:9px}
+  .project-attachments{grid-column:3}
+  .project-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 @media(max-width:700px){
   :root{--axis-x:20px}
   .shell{padding:0 22px}.head{height:72px}.site-logo{width:50px;height:50px}.close-link{width:34px;height:34px;font-size:27px}
   .about{padding:38px 0 76px}.intro{padding-bottom:42px}.intro h1{font-size:27px;line-height:1.1}.bio{font-size:15px}
+  .hero-photo{margin-bottom:18px;aspect-ratio:4/3;border-radius:14px}.hero-photo img{object-position:52% center}
   .timeline-wrap{padding-top:42px}.timeline-head{margin-bottom:20px}
   .timeline:before{top:18px;bottom:18px}
   .entry{padding-left:42px;margin-bottom:11px;padding-bottom:11px}
   .entry:not(:last-child):after{left:42px}
   .timeline-node{top:29px}
-  .entry-surface{grid-template-columns:50px minmax(0,1fr);grid-template-areas:"logo meta" "logo main";column-gap:14px;row-gap:7px;min-height:0;padding:18px 18px;border-radius:16px;opacity:.44}
+  .entry-surface{grid-template-columns:50px minmax(0,1fr);grid-template-areas:"logo meta" "logo main" ". projects";column-gap:14px;row-gap:7px;min-height:0;padding:18px 18px;border-radius:16px;opacity:.44}
   .logo-frame{grid-area:logo;width:46px;height:46px;border-radius:12px}
   .entry-meta{grid-area:meta;padding-top:0;align-self:center}
   .entry-main{grid-area:main;grid-template-columns:1fr;gap:8px}
+  .project-attachments{grid-area:projects;grid-column:auto;margin-top:7px;min-width:0}
+  .project-attachments-label{margin-bottom:8px}
+  .project-grid{display:flex;gap:9px;overflow-x:auto;scrollbar-width:none;padding:0 1px 3px;scroll-snap-type:x proximity}
+  .project-grid::-webkit-scrollbar{display:none}
+  .project-card{flex:0 0 162px;scroll-snap-align:start}
+  .project-card-copy{padding:9px 10px 10px}
+  .project-name{font-size:12px;line-height:15px}
+  .project-kind{font-size:10px;line-height:13px}
   .industry{margin-bottom:4px}
   .copy{font-size:13.5px;line-height:1.46}
   .entry:not(.current):not(.is-expanded) .copy{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
@@ -174,182 +210,110 @@ button{font:inherit}
 </head>
 <body>
 <div class="shell">
-  <header class="head">
-    <a class="site-logo" href="index.html" aria-label="The Daily Sin home">
-      <span class="site-logo-fallback" aria-hidden="true">PB</span>
-      <img src="assets/studio-seal.png" data-fallback="assets/about/tds.png" alt="Studio by The Daily Sin">
-    </a>
-    <a class="close-link" id="close-about" href="index.html" aria-label="Close About page">×</a>
-  </header>
-
-  <main class="about">
-    <section class="about-grid" aria-labelledby="about-title">
-      <div class="eyebrow">About</div>
-      <div class="intro">
-        <h1 id="about-title">Pankaj Baid — product &amp; brand designer.</h1>
-        <p class="bio">I’m a product and brand designer working across industrial design, packaging, identity and 3D/CGI. I’ve taken products from research and prototypes through manufacturing, brand systems and market launch—not just renders and mockups. I’m building The Daily Sin and take on selected projects in other categories where that end-to-end perspective is useful.</p>
-        <div class="actions">
-          <button class="action" id="contact-open" type="button"><span class="message-icon" aria-hidden="true"></span>Contact</button>
-          <a class="action" href="https://www.linkedin.com/in/baidpankaj/" target="_blank" rel="noopener">LinkedIn <span class="arrow" aria-hidden="true">↗</span></a>
-          <a class="action" href="https://thedailysin.com" target="_blank" rel="noopener">The Daily Sin <span class="arrow" aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="timeline-wrap" aria-labelledby="experience-title">
-      <div class="timeline-head">
-        <h2 id="experience-title">Selected experience</h2>
-      </div>
-
-      <div class="timeline" id="timeline">
-        <article class="entry current is-active" tabindex="0">
-          <span class="timeline-node" aria-hidden="true"></span>
-          <div class="entry-surface">
-            <div class="logo-frame"><img src="assets/about/tds.png" alt="The Daily Sin logo"></div>
-            <div class="entry-meta"><div class="years">2024 — Present</div><div class="location">Delhi NCR</div></div>
-            <div class="entry-main">
-              <div class="entry-title"><h3>The Daily Sin</h3><div class="role">Founder · Brand, product & creative</div></div>
-              <div><div class="industry">Consumer wellness · FMCG</div><div class="copy">Building a consumer brand around one question: can a healthy choice feel genuinely tempting? Took the first product from concept through strategy, identity, packaging, website and retail experiments.</div></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="entry" tabindex="0">
-          <span class="timeline-node" aria-hidden="true"></span>
-          <div class="entry-surface">
-            <div class="logo-frame"><img src="assets/about/sadhguru-academy.png" alt="Sadhguru Academy logo"></div>
-            <div class="entry-meta"><div class="years">2025 — 2026</div></div>
-            <div class="entry-main">
-              <div class="entry-title"><h3>Gen A Entrepreneurship Bootcamp</h3><div class="role">Sadhguru Academy · Inaugural cohort</div></div>
-              <div><div class="industry">Entrepreneurship · Semiconductor skilling</div><div class="copy">Year-long venture-building program across 26 intensive weekends. Researched opportunities in semiconductor skilling through on-ground conversations with academicians, industry leaders, workers and stakeholders across the value chain.</div></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="entry" tabindex="0">
-          <span class="timeline-node" aria-hidden="true"></span>
-          <div class="entry-surface">
-            <div class="logo-frame"><img src="assets/about/prism.png" alt="Prism School of Music logo"></div>
-            <div class="entry-meta"><div class="years">2020 — Present</div><div class="location">Gurugram</div></div>
-            <div class="entry-main">
-              <div class="entry-title"><h3>Prism School of Music</h3><div class="role">Graphic Designer · Consultant</div></div>
-              <div><div class="industry">Education · Music · Furniture</div><div class="copy">Designed a website reaching 25K+ annual visitors; Amazon books and apparel; social graphics and promotional videos; logo, mobile app UI/UX, store signage and brand guidelines. Also designed music-production furniture for mass manufacture.</div></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="entry" tabindex="0">
-          <span class="timeline-node" aria-hidden="true"></span>
-          <div class="entry-surface">
-            <div class="logo-frame"><img src="assets/about/voyage.png" alt="Voyage Eyewear logo"></div>
-            <div class="entry-meta"><div class="years">2024</div><div class="location">Delhi</div></div>
-            <div class="entry-main">
-              <div class="entry-title"><h3>Voyage Eyewear</h3><div class="role">3D Motion Designer</div></div>
-              <div><div class="industry">Eyewear · Fashion</div><div class="copy">Created CGI, VFX and virtual-production work for the eyewear catalogue and performance marketing, contributing to 534K+ social views across 70+ targeted ads.</div></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="entry" tabindex="0">
-          <span class="timeline-node" aria-hidden="true"></span>
-          <div class="entry-surface">
-            <div class="logo-frame"><img src="assets/about/drop-render.png" alt="Drop Render logo"></div>
-            <div class="entry-meta"><div class="years">2022 — Present</div><div class="location">Delhi</div></div>
-            <div class="entry-main">
-              <div class="entry-title"><h3>Drop Render</h3><div class="role">Freelance 3D Generalist</div></div>
-              <div><div class="industry">FMCG · Skincare · Furniture</div><div class="copy">Created 40+ Blender templates for Spanish D2C skincare brands including Planthia, and used 3D art direction to reduce photoshoot requirements while contributing to identity work for Indian home-furnishing brands.</div></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="entry" tabindex="0">
-          <span class="timeline-node" aria-hidden="true"></span>
-          <div class="entry-surface">
-            <div class="logo-frame"><img src="assets/about/frog.png" alt="frog logo"></div>
-            <div class="entry-meta"><div class="years">2022</div><div class="location">Gurugram</div></div>
-            <div class="entry-main">
-              <div class="entry-title"><h3>frog · Capgemini Invent</h3><div class="role">Industrial Design Intern</div></div>
-              <div><div class="industry">Consumer appliances</div><div class="copy">Worked across air coolers, water heaters, mixer grinders and ceiling fans from design research through final concepts. Contributed to the research phase of a live Bajaj Electronics project and participated in FMCG pitches.</div></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="entry" tabindex="0">
-          <span class="timeline-node" aria-hidden="true"></span>
-          <div class="entry-surface">
-            <div class="logo-frame"><img src="assets/about/idofthings.png" alt="IDofThings logo"></div>
-            <div class="entry-meta"><div class="years">2021 — 2022</div><div class="location">Remote</div></div>
-            <div class="entry-main">
-              <div class="entry-title"><h3>IDofThings</h3><div class="role">Industrial Designer · Associate</div></div>
-              <div><div class="industry">Medical devices · IoT · HVAC</div><div class="copy">Developed concepts for a hands-free sanitiser dispenser, IoT tracking device and HVAC control unit while working remotely as an industrial designer.</div></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="entry" tabindex="0">
-          <span class="timeline-node" aria-hidden="true"></span>
-          <div class="entry-surface">
-            <div class="logo-frame placeholder" aria-label="Generic company mark"><span class="placeholder-mark" aria-hidden="true"><i></i><i></i><i></i></span></div>
-            <div class="entry-meta"><div class="years">2020 — 2021</div><div class="location">Faridabad</div></div>
-            <div class="entry-main">
-              <div class="entry-title"><h3>APE Technologies <span style="color:#7b7b76">(prev. Traya Tech)</span></h3><div class="role">Co-founder · Industrial Designer</div></div>
-              <div><div class="industry">Medical devices · Courier safety</div><div class="copy">Co-founded a medical-device venture for delivery couriers during COVID-19 and secured a ₹2.5 lakh government grant. Designed and developed self-sanitising gloves and a CK UV torch with a surface-adjusting head.</div></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="entry" tabindex="0">
-          <span class="timeline-node" aria-hidden="true"></span>
-          <div class="entry-surface">
-            <div class="logo-frame"><img src="assets/about/becre8v.png" alt="BeCre8v logo"></div>
-            <div class="entry-meta"><div class="years">2019</div><div class="location">Faridabad</div></div>
-            <div class="entry-main">
-              <div class="entry-title"><h3>BeCre8v</h3><div class="role">Industrial Design Intern</div></div>
-              <div><div class="industry">Toys · K12 education</div><div class="copy">Designed STEM toys for K12, including the Airship Plane Launcher, which became a best-selling product. Conducted customer demos and primary research, and prototyped products using mock-ups, 3D printing and laser cutting.</div></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="entry" tabindex="0">
-          <span class="timeline-node" aria-hidden="true"></span>
-          <div class="entry-surface">
-            <div class="logo-frame"><img src="assets/about/symbiosis.png" alt="Symbiosis Institute of Design logo"></div>
-            <div class="entry-meta"><div class="years">2016 — 2020</div><div class="location">Pune</div></div>
-            <div class="entry-main">
-              <div class="entry-title"><h3>Symbiosis Institute of Design</h3><div class="role">B.Des · Industrial Design</div></div>
-              <div><div class="industry">Design education</div><div class="copy">Studied industrial design, design thinking, sketching, prototyping, manufacturing methods, ergonomics and communication design.</div></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="entry" tabindex="0">
-          <span class="timeline-node" aria-hidden="true"></span>
-          <div class="entry-surface">
-            <div class="logo-frame"><img src="assets/about/tie.png" alt="TiE Young Entrepreneur logo"></div>
-            <div class="entry-meta"><div class="years">2015 — 2016</div><div class="location">Delhi</div></div>
-            <div class="entry-main">
-              <div class="entry-title"><h3>TiE Young Entrepreneur</h3><div class="role">Entrepreneurship Program</div></div>
-              <div><div class="industry">Entrepreneurship education</div><div class="copy">Participated in the TiE Young Entrepreneur program and attended sessions led by startup founders and business leaders including Deep Kalra.</div></div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
+<header class="head">
+<a aria-label="The Daily Sin home" class="site-logo" href="index.html">
+<span aria-hidden="true" class="site-logo-fallback">PB</span>
+<img alt="Studio by The Daily Sin" data-fallback="assets/about/tds.png" src="assets/studio-seal.png"/>
+</a>
+<a aria-label="Close About page" class="close-link" href="index.html" id="close-about">×</a>
+</header>
+<main class="about">
+<section aria-labelledby="about-title" class="about-grid">
+<div class="eyebrow">About</div>
+<div class="intro">
+<h1 id="about-title">Pankaj Baid — product &amp; brand designer.</h1>
+<figure class="hero-photo">
+<img alt="Pankaj Baid presenting at the Gen A Entrepreneurship Bootcamp at Sadhguru Academy" src="assets/about/pankaj-gena.jpg"/>
+</figure>
+<p class="bio">I’m a product and brand designer working across industrial design, packaging, identity and 3D/CGI. I’ve taken products from research and prototypes through manufacturing, brand systems and market launch—not just renders and mockups. I’m building The Daily Sin and take on selected projects in other categories where that end-to-end perspective is useful.</p>
+<div class="actions">
+<button class="action" id="contact-open" type="button"><span aria-hidden="true" class="message-icon"></span>Contact</button>
+<a class="action" href="https://www.linkedin.com/in/baidpankaj/" rel="noopener" target="_blank">LinkedIn <span aria-hidden="true" class="arrow">↗</span></a>
+<a class="action" href="https://thedailysin.com" rel="noopener" target="_blank">The Daily Sin <span aria-hidden="true" class="arrow">↗</span></a>
 </div>
+</div>
+</section>
+<section aria-labelledby="experience-title" class="timeline-wrap">
+<div class="timeline-head">
+<h2 id="experience-title">Selected experience</h2>
+</div>
+<div class="timeline" id="timeline">
+<article class="entry current is-active" tabindex="0">
+<span aria-hidden="true" class="timeline-node"></span>
+<div class="entry-surface">
+<div class="logo-frame"><img alt="The Daily Sin logo" src="assets/about/tds.png"/></div>
+<div class="entry-meta"><div class="years">2024 — Present</div><div class="location">Delhi NCR</div></div>
+<div class="entry-main">
+<div class="entry-title"><h3>The Daily Sin</h3><div class="role">Founder · Brand, product &amp; creative</div></div>
+<div><div class="industry">Consumer wellness · FMCG</div><div class="copy">Building a consumer brand around one question: can a healthy choice feel genuinely tempting? Took the first product from concept through strategy, identity, packaging, website and retail experiments.</div></div>
+</div><div aria-label="Selected work from The Daily Sin" class="project-attachments"><div class="project-attachments-label">Selected work</div><div class="project-grid"><div class="project-card" data-project-title="The Daily Sin Brand"><div class="project-thumb logo-thumb"><img alt="" loading="lazy" src="assets/about/tds.png"/></div><div class="project-card-copy"><span class="project-name">The Daily Sin Brand</span><span class="project-kind">Brand identity</span></div></div><div class="project-card" data-project-title="Amla in a Cigarette Box"><div class="project-thumb logo-thumb"><img alt="" loading="lazy" src="assets/about/tds.png"/></div><div class="project-card-copy"><span class="project-name">Amla in a Cigarette Box</span><span class="project-kind">Packaging</span></div></div><div class="project-card" data-project-title="The Daily Sin Website"><div class="project-thumb logo-thumb"><img alt="" loading="lazy" src="assets/about/tds.png"/></div><div class="project-card-copy"><span class="project-name">The Daily Sin Website</span><span class="project-kind">Digital</span></div></div></div></div>
+</div>
+</article>
+<article class="entry" tabindex="0">
+<span aria-hidden="true" class="timeline-node"></span>
+<div class="entry-surface">
+<div class="logo-frame"><img alt="Sadhguru Academy logo" src="assets/about/sadhguru-academy.png"/></div>
+<div class="entry-meta"><div class="years">2025 — 2026</div></div>
+<div class="entry-main">
+<div class="entry-title"><h3>Gen A Entrepreneurship Bootcamp</h3><div class="role">Sadhguru Academy · Inaugural cohort</div></div>
+<div><div class="industry">Entrepreneurship · Semiconductor skilling</div><div class="copy">Year-long venture-building program across 26 intensive weekends. Researched opportunities in semiconductor skilling through on-ground conversations with academicians, industry leaders, workers and stakeholders across the value chain.</div></div>
+</div><div aria-label="Selected work from Gen A Entrepreneurship Bootcamp" class="project-attachments"><div class="project-attachments-label">Selected work</div><div class="project-grid"><div class="project-card" data-project-title="Semiworkx — Semiconductor Skilling"><div class="project-thumb"><img alt="" loading="lazy" src="assets/about/pankaj-gena.jpg"/></div><div class="project-card-copy"><span class="project-name">Semiworkx — Semiconductor Skilling</span><span class="project-kind">Research · Brand</span></div></div></div></div>
+</div>
+</article>
+<article class="entry" tabindex="0">
+<span aria-hidden="true" class="timeline-node"></span>
+<div class="entry-surface">
+<div class="logo-frame"><img alt="Prism School of Music logo" src="assets/about/prism.png"/></div>
+<div class="entry-meta"><div class="years">2020 — Present</div><div class="location">Gurugram</div></div>
+<div class="entry-main">
+<div class="entry-title"><h3>Prism School of Music</h3><div class="role">Graphic Designer · Consultant</div></div>
+<div><div class="industry">Education · Music · Furniture</div><div class="copy">Designed a website reaching 25K+ annual visitors; Amazon books and apparel; social graphics and promotional videos; logo, mobile app UI/UX, store signage and brand guidelines. Also designed music-production furniture for mass manufacture.</div></div>
+</div><div aria-label="Selected work from Prism School of Music" class="project-attachments"><div class="project-attachments-label">Selected work</div><div class="project-grid"><div class="project-card" data-project-title="Prism Visual Identity"><div class="project-thumb logo-thumb dark"><img alt="" loading="lazy" src="assets/about/prism.png"/></div><div class="project-card-copy"><span class="project-name">Prism Visual Identity</span><span class="project-kind">Visual design</span></div></div><div class="project-card" data-project-title="Music School Website"><div class="project-thumb logo-thumb dark"><img alt="" loading="lazy" src="assets/about/prism.png"/></div><div class="project-card-copy"><span class="project-name">Music School Website</span><span class="project-kind">Digital</span></div></div><div class="project-card" data-project-title="Prism Studio Desk"><div class="project-thumb logo-thumb dark"><img alt="" loading="lazy" src="assets/about/prism.png"/></div><div class="project-card-copy"><span class="project-name">Prism Studio Desk</span><span class="project-kind">Product design</span></div></div></div></div>
+</div>
+</article>
+<article class="entry" tabindex="0">
+<span aria-hidden="true" class="timeline-node"></span>
+<div class="entry-surface">
+<div class="logo-frame"><img alt="Voyage Eyewear logo" src="assets/about/voyage.png"/></div>
+<div class="entry-meta"><div class="years">2024</div><div class="location">Delhi</div></div>
+<div class="entry-main">
+<div class="entry-title"><h3>Voyage Eyewear</h3><div class="role">3D Motion Designer</div></div>
+<div><div class="industry">Eyewear · Fashion</div><div class="copy">Created CGI, VFX and virtual-production work for the eyewear catalogue and performance marketing, contributing to 534K+ social views across 70+ targeted ads.</div></div>
+</div><div aria-label="Selected work from Voyage Eyewear" class="project-attachments"><div class="project-attachments-label">Selected work</div><div class="project-grid"><div class="project-card" data-project-title="Mother’s Day"><div class="project-thumb logo-thumb"><img alt="" loading="lazy" src="assets/about/voyage.png"/></div><div class="project-card-copy"><span class="project-name">Mother’s Day</span><span class="project-kind">Motion graphics · Film</span></div></div><div class="project-card" data-project-title="Motion Design"><div class="project-thumb logo-thumb"><img alt="" loading="lazy" src="assets/about/voyage.png"/></div><div class="project-card-copy"><span class="project-name">Motion Design</span><span class="project-kind">Product visualisation</span></div></div></div></div>
+</div>
+</article>
+<article class="entry" tabindex="0">
+<span aria-hidden="true" class="timeline-node"></span>
+<div class="entry-surface">
+<div class="logo-frame"><img alt="Drop Render logo" src="assets/about/drop-render.png"/></div>
+<div class="entry-meta"><div class="years">2022 — Present</div><div class="location">Delhi</div></div>
+<div class="entry-main">
+<div class="entry-title"><h3>Drop Render</h3><div class="role">Freelance 3D Generalist</div></div>
+<div><div class="industry">FMCG · Skincare · Furniture</div><div class="copy">Created 40+ Blender templates for Spanish D2C skincare brands including Planthia, and used 3D art direction to reduce photoshoot requirements while contributing to identity work for Indian home-furnishing brands.</div></div>
+</div><div aria-label="Selected work from Drop Render" class="project-attachments"><div class="project-attachments-label">Selected work</div><div class="project-grid"><div class="project-card" data-project-title="Home &amp; Living Renders"><div class="project-thumb logo-thumb"><img alt="" loading="lazy" src="assets/about/drop-render.png"/></div><div class="project-card-copy"><span class="project-name">Home &amp; Living Renders</span><span class="project-kind">3D visualisation</span></div></div><div class="project-card" data-project-title="Skincare Renders"><div class="project-thumb logo-thumb"><img alt="" loading="lazy" src="assets/about/drop-render.png"/></div><div class="project-card-copy"><span class="project-name">Skincare Renders</span><span class="project-kind">3D visualisation</span></div></div></div></div>
+</div>
+</article>
 
+
+
+
+
+
+</div>
+</section>
+</main>
+</div>
 <dialog class="contact-dialog" id="contact-dialog">
-  <div class="contact-card">
-    <button class="contact-close" id="contact-close" type="button" aria-label="Close contact panel">×</button>
-    <p class="contact-kicker">Start a conversation</p>
-    <h2>Have something interesting in mind? Let’s make it harder to ignore.</h2>
-    <div class="contact-options">
-      <a class="contact-option" href="mailto:pankaj@thedailysin.com"><span>Email</span><b>pankaj@thedailysin.com</b><span>↗</span></a>
-      <a class="contact-option" href="https://wa.me/917020472758" target="_blank" rel="noopener"><span>WhatsApp</span><b>+91 70204 72758</b><span>↗</span></a>
-    </div>
-  </div>
+<div class="contact-card">
+<button aria-label="Close contact panel" class="contact-close" id="contact-close" type="button">×</button>
+<p class="contact-kicker">Start a conversation</p>
+<h2>Have something interesting in mind? Let’s make it harder to ignore.</h2>
+<div class="contact-options">
+<a class="contact-option" href="mailto:pankaj@thedailysin.com"><span>Email</span><b>pankaj@thedailysin.com</b><span>↗</span></a>
+<a class="contact-option" href="https://wa.me/917020472758" rel="noopener" target="_blank"><span>WhatsApp</span><b>+91 70204 72758</b><span>↗</span></a>
+</div>
+</div>
 </dialog>
-
 <script>
 const closeAbout=document.getElementById('close-about');
 const contactDialog=document.getElementById('contact-dialog');
